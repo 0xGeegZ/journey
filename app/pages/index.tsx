@@ -2,9 +2,12 @@ import Landing from "@components/Landing";
 import styles from "@styles/Home.module.css";
 import { useEffect, useState } from "react";
 import { VStack, Text } from "@chakra-ui/react";
+import { useAccount } from "wagmi";
+import Explore from "@components/Explore";
 
 function Home() {
   const [width, setWidth] = useState<number>(window.innerWidth);
+  const { isConnected } = useAccount();
 
   function handleWindowSizeChange() {
     setWidth(window.innerWidth);
@@ -32,7 +35,7 @@ function Home() {
     );
   }
 
-  return <Landing />;
+  return !isConnected ? <Landing /> : <Explore />;
 }
 
 export default Home;

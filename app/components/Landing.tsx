@@ -1,9 +1,12 @@
 import { Button, VStack, Image, Box, Text, Spinner } from "@chakra-ui/react";
-import { useState } from "react";
 import styles from "@styles/Home.module.css";
+import { useConnect } from "wagmi";
+import { InjectedConnector } from "wagmi/connectors/injected";
 
 function Landing() {
-  const [isLoading, setLoading] = useState<boolean>(false);
+  const { connect, isLoading } = useConnect({
+    connector: new InjectedConnector(),
+  });
 
   return (
     <div className={styles.container}>
@@ -17,7 +20,7 @@ function Landing() {
               Please connect your wallet to continue.
             </Text>
           </VStack>
-          <Button onClick={() => {}} className={styles.connectButton}>
+          <Button onClick={() => connect()} className={styles.connectButton}>
             {isLoading ? <Spinner color="white" /> : "Connect Wallet"}
           </Button>
         </VStack>
