@@ -16,12 +16,12 @@ export const mockQuests: Quest[] = [
     title: "DEX 101 with SpookySwap",
     description:
       "Explore swapping, LPing on SpookySwap, and staking on TRON with SpookySwap",
-    image_url: "/1.png",
+    image_url: "/sd_spookyswap.jpg",
     isJourney: false,
     nft_reward: {
       description: "Exclusive NFT for quest completion",
-      image_url: "/1.png",
-      preview_url: "/1.png",
+      image_url: "/sd_spookyswap.jpg",
+      preview_url: "/sd_spookyswap.jpg",
       title: "DEX 101 with SpookySwap",
       token_uri: "",
     },
@@ -33,7 +33,7 @@ export const mockQuests: Quest[] = [
     xp: 400,
     id: "3Hr6HdFOM47cZwb5a69K",
     partner: {
-      image_url: "/1.png",
+      image_url: "/spookyswap.png",
     },
     order: 1,
   },
@@ -44,8 +44,8 @@ export const mockQuests: Quest[] = [
     isJourney: false,
     nft_reward: {
       description: "Exclusive NFT for quest completion",
-      image_url: "/1.png",
-      preview_url: "/1.png",
+      image_url: "/sd_stader.jpg",
+      preview_url: "/sd_stader.jpg",
       title: "DEX 101 with SpookySwap",
       token_uri: "",
     },
@@ -57,7 +57,7 @@ export const mockQuests: Quest[] = [
     xp: 400,
     id: "9Gl6qQNybiCNCyAlULwZ",
     partner: {
-      image_url: "/1.png",
+      image_url: "/stader.jpg",
     },
     order: 2,
   },
@@ -68,8 +68,8 @@ export const mockQuests: Quest[] = [
     isJourney: false,
     nft_reward: {
       description: "Exclusive NFT for quest completion",
-      image_url: "/1.png",
-      preview_url: "/1.png",
+      image_url: "/sd_geist.jpg",
+      preview_url: "/sd_geist.jpg",
       title: "DEX 101 with SpookySwap",
       token_uri: "",
     },
@@ -81,9 +81,9 @@ export const mockQuests: Quest[] = [
     xp: 400,
     id: "LX0JeE1m1Hmp6NCBiyNs",
     partner: {
-      image_url: "/1.png",
+      image_url: "/geist.jpg",
     },
-    order: 3,
+    order: 5,
   },
   {
     title: "NFT 101 on PaintSwap",
@@ -92,8 +92,8 @@ export const mockQuests: Quest[] = [
     isJourney: false,
     nft_reward: {
       description: "Exclusive NFT for quest completion",
-      image_url: "/1.png",
-      preview_url: "/1.png",
+      image_url: "/sd_paintswap.jpg",
+      preview_url: "/sd_paintswap.jpg",
       title: "DEX 101 with SpookySwap",
       token_uri: "",
     },
@@ -105,9 +105,9 @@ export const mockQuests: Quest[] = [
     xp: 400,
     id: "SOEKIWe2g0JDOKTZBl6N",
     partner: {
-      image_url: "/1.png",
+      image_url: "/paintswap.png",
     },
-    order: 4,
+    order: 6,
   },
   {
     title: "Swapping on Beethoven X",
@@ -116,8 +116,8 @@ export const mockQuests: Quest[] = [
     isJourney: false,
     nft_reward: {
       description: "Exclusive NFT for quest completion",
-      image_url: "/1.png",
-      preview_url: "/1.png",
+      image_url: "/sd_beethoven.jpg",
+      preview_url: "/sd_beethoven.jpg",
       title: "DEX 101 with SpookySwap",
       token_uri: "",
     },
@@ -129,9 +129,9 @@ export const mockQuests: Quest[] = [
     xp: 400,
     id: "V2zbf8iYGGGzFnkXQ6tB",
     partner: {
-      image_url: "/1.png",
+      image_url: "/beethoven.png",
     },
-    order: 5,
+    order: 3,
   },
   {
     title: "Earn on Yearn.Finance",
@@ -140,8 +140,8 @@ export const mockQuests: Quest[] = [
     isJourney: false,
     nft_reward: {
       description: "Exclusive NFT for quest completion",
-      image_url: "/1.png",
-      preview_url: "/1.png",
+      image_url: "/sd_yearn.jpg",
+      preview_url: "/sd_yearn.jpg",
       title: "DEX 101 with SpookySwap",
       token_uri: "",
     },
@@ -153,8 +153,8 @@ export const mockQuests: Quest[] = [
     xp: 400,
     id: "k2JLHufwfjipZT9HGVIo",
     partner: {
-      image_url: "/1.png",
+      image_url: "/yearn.png",
     },
-    order: 6,
+    order: 4,
   },
 ];

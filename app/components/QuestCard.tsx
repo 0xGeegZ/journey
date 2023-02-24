@@ -37,7 +37,11 @@ export default function QuestCard({
         <VStack alignItems="flex-start">
           <HStack>
             <Box w="36px">
-              <Image src={partner.image_url} alt="sunswap"></Image>
+              <Image
+                src={partner.image_url}
+                alt="partner image"
+                borderRadius="100%"
+              ></Image>
             </Box>
             <Text className={styles.title}>{title}</Text>
           </HStack>
