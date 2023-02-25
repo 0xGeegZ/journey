@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 import QuestCard from "./QuestCard";
 import { useEffect, useState } from "react";
 import Error404 from "@components/404";
-import { mockQuests } from "@data/quests";
+import { mockQuests } from "@data/static";
 
 // const JOURNEY_API_URL =
 //   process.env.NEXT_PUBLIC_ENV === "prod"

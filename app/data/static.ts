@@ -9,6 +9,7 @@ export type Quest = {
   id: string;
   isJourney: boolean;
   order: number;
+  completed_users: any[];
 };
 
 export const mockQuests: Quest[] = [
@@ -36,6 +37,7 @@ export const mockQuests: Quest[] = [
       image_url: "/spookyswap.png",
     },
     order: 1,
+    completed_users: [],
   },
   {
     title: "Liquid Staking on Stader",
@@ -60,6 +62,7 @@ export const mockQuests: Quest[] = [
       image_url: "/stader.jpg",
     },
     order: 2,
+    completed_users: [],
   },
   {
     title: "Lending 101 on Geist",
@@ -84,6 +87,7 @@ export const mockQuests: Quest[] = [
       image_url: "/geist.jpg",
     },
     order: 5,
+    completed_users: [],
   },
   {
     title: "NFT 101 on PaintSwap",
@@ -108,6 +112,7 @@ export const mockQuests: Quest[] = [
       image_url: "/paintswap.png",
     },
     order: 6,
+    completed_users: [],
   },
   {
     title: "Swapping on Beethoven X",
@@ -132,6 +137,7 @@ export const mockQuests: Quest[] = [
       image_url: "/beethoven.png",
     },
     order: 3,
+    completed_users: [],
   },
   {
     title: "Earn on Yearn.Finance",
@@ -156,5 +162,17 @@ export const mockQuests: Quest[] = [
       image_url: "/yearn.png",
     },
     order: 4,
+    completed_users: [],
+  },
+];
+
+export const mockQuestSteps = [
+  {
+    amount: 100,
+    contract_address: "41183b778ae41db16fc7e392c52837937055959664",
+    description: "Swap at least 100 TRX to SUN on SunSwap V1.",
+    start_url: "https://sunswap.com/#/home",
+    title: "Swap your TRX to SUN on SunSwap",
+    isTwitter: false,
   },
 ];
