@@ -5,6 +5,7 @@ import { abridgeAddress } from "@utils/abridgeAddress";
 import { useState } from "react";
 import { useRouter } from "next/router";
 import { useAccount, useDisconnect } from "wagmi";
+import { useEffect } from "react";
 
 const Navbar = () => {
   const { address } = useAccount();
@@ -12,7 +13,7 @@ const Navbar = () => {
   const router = useRouter();
   const [isHover, setIsHover] = useState<boolean>(false);
 
-  if (!address) return;
+  if (!address) return null;
 
   function handleDisconnect() {
     disconnect();

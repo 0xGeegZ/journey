@@ -4,35 +4,34 @@ import { useRouter } from "next/router";
 import QuestCard from "./QuestCard";
 import { useEffect, useState } from "react";
 import Error404 from "@components/404";
-import { mockQuests } from "@data/static";
 import withTransition from "./withTransition";
 
-// const JOURNEY_API_URL =
-//   process.env.NEXT_PUBLIC_ENV === "prod"
-//     ? process.env.NEXT_PUBLIC_API_PROD
-//     : process.env.NEXT_PUBLIC_API_DEV;
+const JOURNEY_API_URL =
+  process.env.NEXT_PUBLIC_ENV === "prod"
+    ? process.env.NEXT_PUBLIC_API_PROD
+    : process.env.NEXT_PUBLIC_API_DEV;
 
 function Explore() {
   const router = useRouter();
 
-  // const [fetchedQuests, setFetchedQuests] = useState<any[]>([]);
+  const [fetchedQuests, setFetchedQuests] = useState<any[]>([]);
   const [isLoading, setLoading] = useState<boolean>(false);
 
-  // fetches quest
-  // useEffect(() => {
-  //   async function fetchQuests() {
-  //     setLoading(true);
-  //     try {
-  //       const response = await fetch(`${JOURNEY_API_URL}/api/quests`);
-  //       const { quests } = await response.json();
-  //       setFetchedQuests(quests);
-  //     } catch (err) {
-  //       console.log(err);
-  //     }
-  //     setLoading(false);
-  //   }
-  //   fetchQuests();
-  // }, []);
+  // fetches quests
+  useEffect(() => {
+    async function fetchQuests() {
+      setLoading(true);
+      try {
+        const response = await fetch(`${JOURNEY_API_URL}/api/quests`);
+        const { quests } = await response.json();
+        setFetchedQuests(quests);
+      } catch (err) {
+        console.log(err);
+      }
+      setLoading(false);
+    }
+    fetchQuests();
+  }, []);
 
   function handleClick(e: any, id: string) {
     e.preventDefault();
@@ -46,14 +45,14 @@ function Explore() {
       </VStack>
     );
 
-  // if (fetchedQuests.length === 0) return <Error404 />;
+  if (fetchedQuests.length === 0) return <Error404 />;
 
   return (
     <div className={styles.container}>
       <main className={styles.main}>
         <Text className={styles.title}>Explore Quests</Text>
         <SimpleGrid columns={2} gap={5} pt={10}>
-          {mockQuests
+          {fetchedQuests
             .filter((q) => !q.isJourney)
             .sort((a, b) => a.order - b.order)
             .map(

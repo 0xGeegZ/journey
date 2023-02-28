@@ -1,6 +1,7 @@
 import { Button, VStack, Image, Box, Text, Spinner } from "@chakra-ui/react";
 import styles from "@styles/Home.module.css";
-import { useConnect } from "wagmi";
+import { useState } from "react";
+import { useConnect, useProvider } from "wagmi";
 import { InjectedConnector } from "wagmi/connectors/injected";
 import withTransition from "./withTransition";
 

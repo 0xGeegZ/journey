@@ -17,7 +17,7 @@ export const twitterRouter = express.Router();
 
 const client = new Client(process.env.BEARER_TOKEN as string);
 
-// verify tweet:
+// verify tweet
 twitterRouter.get("/tweet/:tweetId/", async (req: Request, res: Response) => {
   try {
     const { tweetId } = req.params;
@@ -67,29 +67,7 @@ twitterRouter.get("/tweet/:tweetId/", async (req: Request, res: Response) => {
   }
 });
 
-// verify following:
-twitterRouter.get("/follow/:userId", async (req: Request, res: Response) => {
-  try {
-    const { userId } = req.params;
-
-    const { data } = await client.users.usersIdFollowing(userId, {
-      "user.fields": ["id", "name", "username"],
-    });
-
-    const found = data?.find(({ id }) => id === "1299250153992327169");
-
-    if (found) {
-      res.status(200).send("found!");
-    } else {
-      res.status(404).send("not found");
-    }
-  } catch (e) {
-    console.log(e);
-    res.status(500).send(e);
-  }
-});
-
-// verify following:
+// verify following
 twitterRouter.get(
   "/follow/:userId/:partnerId",
   async (req: Request, res: Response) => {
@@ -132,19 +110,4 @@ twitterRouter.get("/test/:userId", async (req: Request, res: Response) => {
     console.log(e);
     res.status(500).send(e);
   }
-});
-
-// verify tweet
-twitterRouter.get("/test2/:tweetId/", async (req: Request, res: Response) => {
-  const { tweetId } = req.params;
-
-  const { data } = await client.tweets.findTweetById(tweetId, {
-    "tweet.fields": ["author_id"],
-  });
-
-  const { author_id } = data;
-  const { data: data2 } = await client.users.findUserById(author_id);
-  const { username } = data2;
-  console.log(data);
-  res.status(200).send(data2);
 });
