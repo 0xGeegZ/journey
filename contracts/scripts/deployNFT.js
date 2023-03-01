@@ -2,15 +2,13 @@ const hre = require("hardhat");
 const fs = require("fs");
 
 async function main() {
-  const JourneyRewarder = await hre.ethers.getContractFactory(
-    "JourneyRewarder"
-  );
+  const JourneyNFT = await hre.ethers.getContractFactory("JourneyNFT");
 
-  const deployedContract = await JourneyRewarder.deploy();
+  const deployedContract = await JourneyNFT.deploy("JourneyNFT", "JOURNEY");
 
   await deployedContract.deployed();
 
-  console.log("JourneyRewarder deployed to:", deployedContract.address);
+  console.log("JourneyNFT deployed to:", deployedContract.address);
 
   return deployedContract;
 }
