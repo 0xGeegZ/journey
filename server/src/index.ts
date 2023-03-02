@@ -25,7 +25,7 @@ app.use("/api/quests", questsRouter);
 app.use("/api/journey", journeyRouter);
 app.use("/api/verify", verifyRouter);
 app.use("/api/users", usersRouter);
-// app.use("/api/claim", claimRouter);
+app.use("/api/claim", claimRouter);
 app.use("/api/twitter", twitterRouter);
 
 app.listen(port, () => {
