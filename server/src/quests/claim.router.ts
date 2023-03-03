@@ -59,6 +59,35 @@ claimRouter.get("/:questId/:address", async (req: Request, res: Response) => {
     const docRef = doc(db, "quests", questId);
     const docSnap = await getDoc(docRef);
 
+    if (questId === "journey") {
+      if (docSnap.exists()) {
+        const { nft_reward, completed_users } = docSnap.data();
+
+        // SEND NFT REWARD
+        const nftResult = await RewarderContract.reward(
+          JOURNEY_NFT_ADDRESS,
+          address,
+          nft_reward.token_uri
+        );
+
+        // add user to completed_users array
+        const prevCompletedUsers = JSON.parse(JSON.stringify(completed_users));
+        prevCompletedUsers.push(address);
+
+        await updateDoc(docRef, {
+          completed_users: prevCompletedUsers,
+        });
+
+        res.status(200).send({
+          message: "Reward successfully claimed",
+          nftTxn: nftResult,
+        });
+      } else {
+        res.status(404).send({ message: "Journey not found" });
+      }
+      return;
+    }
+
     if (docSnap.exists()) {
       const {
         token_reward,
