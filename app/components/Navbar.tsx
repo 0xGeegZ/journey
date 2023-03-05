@@ -41,7 +41,7 @@ const Navbar = () => {
             ></Image>
           </Link>
           <HStack className={styles.navLeftSection}>
-            <Link href="/journey/SOEKIWe2g0JDOKTZBl6N">
+            <Link href="/journey/1">
               <Text>Journey (Beta)</Text>
             </Link>
             <Link href="/profile">

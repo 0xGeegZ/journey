@@ -275,7 +275,7 @@ function Quest() {
             <Text className={styles.rewardTitle}>Quest Reward</Text>
             {fetchedQuest.token_reward && (
               <RewardStep
-                title={`$${fetchedQuest.token_reward.amount} in ${fetchedQuest.token_reward.symbol}`}
+                title={`$${fetchedQuest.token_reward.fiat_amount} in ${fetchedQuest.token_reward.symbol}`}
                 description="Tokens will be airdropped into your wallet."
                 stepNum={1}
               />

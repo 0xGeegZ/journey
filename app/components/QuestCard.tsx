@@ -51,7 +51,7 @@ export default function QuestCard({
           {token_reward && (
             <RewardPill
               imageUrl="/coin.svg"
-              label={`$${token_reward.amount} ${token_reward.symbol}`}
+              label={`$${token_reward.fiat_amount} ${token_reward.symbol}`}
             />
           )}
           {nft_reward && <RewardPill imageUrl="/badge.svg" label="NFT Badge" />}
