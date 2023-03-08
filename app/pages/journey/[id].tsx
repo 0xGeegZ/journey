@@ -46,44 +46,6 @@ function Quest() {
 
   const { id: journeyId } = router.query;
 
-  // const showSuccessToast = useCallback(() => {
-  //   toast({
-  //     title: "Verification success!",
-  //     description: "You've successfully completed your quest.",
-  //     status: "success",
-  //     duration: 5000,
-  //     isClosable: true,
-  //   });
-  // }, [toast]);
-
-  // const showFailedToast = useCallback(() => {
-  //   toast({
-  //     title: "Verification failed.",
-  //     description: "We're unable to verify your completion.",
-  //     status: "error",
-  //     duration: 5000,
-  //     isClosable: true,
-  //   });
-  // }, [toast]);
-
-  // const updateQuestStatus = useCallback(async () => {
-  //   if (!fetchedUser) return;
-
-  //   const newQuests = JSON.parse(JSON.stringify(fetchedUser.quests));
-  //   newQuests[journeyId as string].journeyId = journeyId;
-  //   newQuests[journeyId as string].status = "2";
-
-  //   const requestOptions = {
-  //     method: "PUT",
-  //     headers: { "Content-Type": "application/json" },
-  //     body: JSON.stringify({
-  //       address: address,
-  //       quests: newQuests,
-  //     }),
-  //   };
-  //   await fetch(`${JOURNEY_API_URL}/api/users/${address}`, requestOptions);
-  // }, [address, fetchedUser, journeyId]);
-
   const fetchUser = useCallback(async () => {
     if (!address) return;
     try {
@@ -286,7 +248,7 @@ function Quest() {
             isDisabled={!isJourneyCompleted || isJourneyRewarded}
           >
             {isJourneyRewarded ? (
-              "Reward claimed"
+              "Reward Unavailable"
             ) : isClaimLoading ? (
               <Spinner />
             ) : (

@@ -31,7 +31,7 @@ const theme = extendTheme({
 });
 
 const { provider, webSocketProvider } = configureChains(
-  [fantom, fantomTestnet],
+  [fantom],
   [publicProvider()]
 );
 

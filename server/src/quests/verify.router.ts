@@ -4,8 +4,6 @@ import { doc, getDoc, updateDoc } from "firebase/firestore";
 import { Client } from "twitter-api-sdk";
 import * as dotenv from "dotenv";
 import fetch from "node-fetch";
-import abi from "../spookyswap.json";
-import abiDecoder from "abi-decoder";
 import { verifyTransaction } from "../verifier";
 
 dotenv.config();
