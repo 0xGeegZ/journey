@@ -47,9 +47,9 @@ verifyRouter.get("/:questId/:address", async (req: Request, res: Response) => {
           // find user current step details from quest
           const activeStep = steps[currentStep];
 
-          const { isTwitter, partner_id } = activeStep;
+          const { partner_id } = activeStep;
 
-          if (isTwitter) {
+          if (activeStep.isTwitter) {
             const { data } = await client.users.usersIdFollowing(
               twitter.user_id,
               {

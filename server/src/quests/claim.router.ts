@@ -22,7 +22,9 @@ const provider = new ethers.providers.JsonRpcProvider(
 );
 
 const privateKey = process.env.PRIVATE_KEY ?? "";
-const signer = new ethers.Wallet(privateKey, provider);
+
+const signer = new ethers.Wallet(`0x${privateKey}`, provider);
+
 const RewarderContract = new ethers.Contract(
   JOURNEY_REWARDER_ADDRESS,
   abi,
