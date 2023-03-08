@@ -5,7 +5,7 @@ Journey is a Fantom-native quests platform built to onboard the next billion use
 - Check out the [Live Deployment](https://tryjourney.xyz)
 - Check out the [Walkthrough Demo](https://vimeo.com/805770352)
 
-![](frontend/public/landing.png)
+![](app/public/landing.png)
 
 ## Problem Statement
 
